@@ -2,6 +2,8 @@ package com.heriberto.microservicioa.service;
 
 import com.heriberto.microservicioa.entity.Fruta;
 import com.heriberto.microservicioa.repository.FrutaRepository;
+import lombok.RequiredArgsConstructor;
+import org.aspectj.lang.annotation.RequiredTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -9,17 +11,20 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.*;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class FrutaServiceImpl implements IFrutaService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    private FrutaRepository frutaRepository;
+    private IFrutaService iFrutaService;
+
+
+    private final FrutaRepository frutaRepository;
 
     @Override
     @Transactional(readOnly = true)
