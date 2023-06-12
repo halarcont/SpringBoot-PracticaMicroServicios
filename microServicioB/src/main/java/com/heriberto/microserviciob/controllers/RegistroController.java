@@ -26,5 +26,6 @@ public class RegistroController {
     public Registro detalle(@PathVariable Long id, @PathVariable Integer cantidad){
         return registroService.findById(id, cantidad);
     }
+
 }
 
