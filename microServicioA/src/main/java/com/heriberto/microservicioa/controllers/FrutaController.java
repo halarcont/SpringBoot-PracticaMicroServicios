@@ -26,9 +26,6 @@ public class FrutaController {
     @Autowired
     private IFrutaService frutaService;
 
-    @Autowired
-    private FrutaRepository frutaRepository;
-
     @GetMapping("/listar")
     public List<Fruta> listar (){
         return frutaService.findAll().stream().map(fruta -> {

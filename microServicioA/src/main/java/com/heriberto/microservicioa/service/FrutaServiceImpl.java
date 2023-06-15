@@ -20,8 +20,6 @@ public class FrutaServiceImpl implements IFrutaService {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    private IFrutaService iFrutaService;
 
 
     private final FrutaRepository frutaRepository;
@@ -53,7 +51,6 @@ public class FrutaServiceImpl implements IFrutaService {
     public Fruta save(Fruta fruta) {
         return frutaRepository.save(fruta);
     }
-
     /*@Override
     @Transactional
     public boolean insert(Fruta fruta) {
