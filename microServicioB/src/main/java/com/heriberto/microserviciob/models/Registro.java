@@ -11,4 +11,6 @@ public class Registro {
 
     private Fruta fruta;
     private Integer cantidad;
+
+
 }

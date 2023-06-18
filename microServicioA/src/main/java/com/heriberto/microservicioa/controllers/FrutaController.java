@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 import static org.bouncycastle.cms.RecipientId.password;
 
+@RequestMapping("api/frutas")
 @RestController
 public class FrutaController {
 
@@ -51,7 +52,7 @@ public class FrutaController {
         }
     }
 
-    @DeleteMapping("/frutas/{id}")
+    @DeleteMapping("/borrar/{id}")
     public ResponseEntity<String> deleteFrutas(@PathVariable("id")long id){
         try{
             int result = frutaService.deleteById(id);
